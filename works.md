@@ -22,6 +22,7 @@
     - [Таблица принятия решения по выдаче кредита с определенной ставкой](https://docs.google.com/spreadsheets/d/1k-miFBAg7t2P9s_xZl0HrT9XMLLWy-HDYPw6Pt9sC1k/edit#gid=1715704617)
     - [Таблица принятия решения по выводу краткого расчета](https://docs.google.com/spreadsheets/d/1ODJKEo4tzOXKaRnxCCsRpzOw6dsHFAtz1b2Ik4hdPGw/edit#gid=946014596)
     - [Попарное тестирование](https://docs.google.com/spreadsheets/d/1ZcxttTH36HqGzCo1CvqZghVFAHPP0NBP/edit#gid=397686339)
+- Тест-кейсы
 ### Socials:
 [![Telegram](https://img.shields.io/badge/-Telegram-090909?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/kate_silver2005)
 [![Vkontakte](https://img.shields.io/badge/-Vkontakte-090909?style=for-the-badge&logo=Vk&logoColor=4F7DB3)](https://vk.com/katesilver)
