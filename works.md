@@ -16,13 +16,30 @@
     -  [Mind-map.png](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/Mind-map_%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%B9%D0%B5%D1%80_XMind.png) и [Mind-map.xmind](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/Mind-map%20%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%B9%D0%B5%D1%80%20%D0%B2%20_.xmind)
     -  [Классы эквивалентности](https://docs.google.com/spreadsheets/d/1u_HBYt22m_0NXfbxc9xd5eNA35X-2qcQl1e82anh5KE/edit#gid=1651523314)
     -  [Сценарное тестирование](https://docs.google.com/spreadsheets/d/1JSBeKw6dtHVM1yTxmYM4AhTqNVTgPymkt5oynw63Nig/edit#gid=1093061594)
+    -  [Краткий чек-лист](https://docs.google.com/spreadsheets/d/11ig9DhfGtz9oIerLA9TId1pHd_vHVjQXavVLa7zmU1I/edit?usp=sharing)
 - Комбинаторные техники тестирования
     - [Проверки по таблице перебора](https://docs.google.com/spreadsheets/d/1MzPEPTLseHKk-v9u4udwjaCztVFLAL-vJC3U0I4FXh8/edit#gid=711026152)
     - [Диаграмма состояний и переходов](https://docs.google.com/spreadsheets/d/1VuyW-QkY6_vpGtg1tUJpVwLyKM4FyCSZfXedB5Ly080/edit#gid=1396450085)
     - [Таблица принятия решения по выдаче кредита с определенной ставкой](https://docs.google.com/spreadsheets/d/1k-miFBAg7t2P9s_xZl0HrT9XMLLWy-HDYPw6Pt9sC1k/edit#gid=1715704617)
     - [Таблица принятия решения по выводу краткого расчета](https://docs.google.com/spreadsheets/d/1ODJKEo4tzOXKaRnxCCsRpzOw6dsHFAtz1b2Ik4hdPGw/edit#gid=946014596)
     - [Попарное тестирование](https://docs.google.com/spreadsheets/d/1ZcxttTH36HqGzCo1CvqZghVFAHPP0NBP/edit#gid=397686339)
-- Тест-кейсы
+- Тест-кейсы в TestRail
+    - Address: https://katesilver.testrail.io
+    - Username: sade_2005@list.ru
+    - Password: NA.x7EEz1RWfawy14jbX
+- Тестирование требований к продукту
+    - [Баги в ТЗ](https://docs.google.com/document/d/19zhqpxXv3fElnftAgypTFAoN4sg_NJ6kD859Bcie5ok/edit#heading=h.sj5y1nc1ihh)
+    - [Тестирование других требований, не относящихся к продукту](https://docs.google.com/spreadsheets/d/1hdUbCN05pvUuIqV3c77I-ubKH-dwdd_fAGbQ0waAyqU/edit?usp=sharing)
+- Тестирование web-продукта Кредитный калькулятор
+    - [Ограничения на формах](https://docs.google.com/spreadsheets/d/1YeCy5cofvxo1BZ4MBeSGVrOImdn0AjKYiYYlpU8N6cs/edit?usp=sharing)
+    - [Целостность линков](https://docs.google.com/spreadsheets/d/1yUHUVP7PNBLBaDly4AfZE_Gv5ydrALkKTvvB0oLmR8A/edit?usp=sharing)
+    - [Тест на адаптивность](https://docs.google.com/spreadsheets/d/17xpBLDBs1HvrHdknjU0IVbuBrWBfXKlYr05MLup7maU/edit?usp=sharing)
+    - [Проверка орфографии](https://docs.google.com/spreadsheets/d/1qtC8pqL5LOC9e7Xp0zdGfpTWj1WbXDL2Ts4ma3VHHgg/edit?usp=sharing)
+    - [Баг-репорты](https://docs.google.com/spreadsheets/d/11dVUYGViM14MFz-uNA1cDm8wyoLpZJTl7tFeGEznwKM/edit?usp=sharing)
+- Интеграционное тестирование в SOUP UI
+    - Запросы под Soup API
+    - Запросы под REST API
+
 ### Socials:
 [![Telegram](https://img.shields.io/badge/-Telegram-090909?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/kate_silver2005)
 [![Vkontakte](https://img.shields.io/badge/-Vkontakte-090909?style=for-the-badge&logo=Vk&logoColor=4F7DB3)](https://vk.com/katesilver)
