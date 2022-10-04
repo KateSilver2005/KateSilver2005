@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="45504227-c3f5-492c-b2ad-065d5483fc83" activeEnvironment="Default" name="SOUP_Алексеева" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="ProjectSettings@hermesConfig">${#System#user.home}\.hermes</con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="0a81e8a7-e504-46a0-8977-45112940be10" wsaVersion="NONE" name="CreditBinding" type="wsdl" bindingName="{http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1}CreditBinding" soapVersion="1_1" anonymous="optional" definition="http://creditcalculator.pointschool.ru/soap/BankCreditScheme3.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://creditcalculator.pointschool.ru/soap/BankCreditScheme3.wsdl"><con:part><con:url>http://creditcalculator.pointschool.ru/soap/BankCreditScheme3.wsdl</con:url><con:content><![CDATA[<!--edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by a.smotrova (quality-lab)-->
+<wsdl:definitions targetNamespace="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1" xmlns:ns="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">
+  <wsdl:import namespace="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1" location="BankCreditScheme.xsd"/>
+  <wsdl:types>
+    <xs:schema targetNamespace="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1" elementFormDefault="qualified"/>
+  </wsdl:types>
+  <wsdl:message name="CalcCreditRequest">
+    <wsdl:part name="ImportCreditParams" element="ns:importCreditParams"/>
+  </wsdl:message>
+  <wsdl:message name="CalcCreditResponse">
+    <wsdl:part name="ImportCreditResult" element="ns:importCreditResult"/>
+  </wsdl:message>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part name="Header" element="tns:HeaderRequest"/>
+  </wsdl:message>
+  <wsdl:portType name="CreditType">
+    <wsdl:operation name="CreditCalculation">
+      <wsdl:input message="tns:CalcCreditRequest"/>
+      <wsdl:output message="tns:CalcCreditResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreditBinding" type="tns:CreditType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CreditCalculation">
+      <soap:operation soapAction="urn:CreditCalculation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:RequestHeader" part="Header" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:RequestHeader" part="Header" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreditService">
+    <wsdl:port name="CreditPort" binding="tns:CreditBinding">
+      <soap:address location="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://creditcalculator.pointschool.ru/soap/BankCreditScheme.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by a.smotrova (quality-lab)-->
+<xs:schema targetNamespace="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <xs:element name="importCreditParams">
+    <xs:annotation>
+      <xs:documentation>Импорт входных параметров для расчета кредита</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Credit">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Amount" type="tns:Amount">
+                <xs:annotation>
+                  <xs:documentation>Сумма кредита</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Fee" type="tns:Fee">
+                <xs:annotation>
+                  <xs:documentation>Первоначальный взнос</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Term" type="tns:Term">
+                <xs:annotation>
+                  <xs:documentation>Период погашения в месяцах</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute ref="tns:client" use="optional" default="0"/>
+      <xs:attribute ref="tns:PreviousConviction" use="optional" default="0"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="Fee">
+    <xs:annotation>
+      <xs:documentation>Первоначальный взнос</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:simpleType name="Amount">
+    <xs:annotation>
+      <xs:documentation>Сумма кредита</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="100000"/>
+      <xs:maxInclusive value="500000"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Term">
+    <xs:annotation>
+      <xs:documentation>Количество месяцев</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="12"/>
+      <xs:maxInclusive value="60"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="importCreditResult">
+    <xs:annotation>
+      <xs:documentation>Ответ на импорт с расчетом по параметрам</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0">
+        <xs:element name="ErrorType" type="tns:ErrorType"/>
+        <xs:element name="ImportResult" type="tns:ImportResult"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ErrorType">
+    <xs:annotation>
+      <xs:documentation>Ошибка</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ErrorCode" type="tns:ErrorCode">
+        <xs:annotation>
+          <xs:documentation>Код ошибки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Description" type="tns:Description">
+        <xs:annotation>
+          <xs:documentation>Описание ошибки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StackTrace" type="tns:StackTrace" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Стектрейс, выбрасываемый в случае возникновения исключения</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ImportResult">
+    <xs:annotation>
+      <xs:documentation>Результат расчета кредита</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Interest" type="tns:Interest">
+        <xs:annotation>
+          <xs:documentation>Процент переплаты по кредиту</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MontlyPayment" type="tns:MonthlyPayment">
+        <xs:annotation>
+          <xs:documentation>Ежемесячный платеж</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OverPayments" type="tns:OverPayments">
+        <xs:annotation>
+          <xs:documentation>Переплата, всего</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Total" type="tns:Total">
+        <xs:annotation>
+          <xs:documentation>Общая сумма выплаты с учетом процентов</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Interest">
+    <xs:annotation>
+      <xs:documentation>Процент по кредиту</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MonthlyPayment">
+    <xs:annotation>
+      <xs:documentation>Ежемесячный платеж</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OverPayments">
+    <xs:annotation>
+      <xs:documentation>Переплата, всего</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Total">
+    <xs:annotation>
+      <xs:documentation>Сумма к оплате, всего</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ErrorCode">
+    <xs:annotation>
+      <xs:documentation>Код ошибки</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="Description">
+    <xs:annotation>
+      <xs:documentation>Описание ошибки</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="StackTrace">
+    <xs:annotation>
+      <xs:documentation>Стектрейс, выбрасываемый в случае возникновения исключения</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:attribute name="client" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Является клиентом?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="PreviousConviction" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Был в заключении?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:simpleType name="Date">
+    <xs:annotation>
+      <xs:documentation>Текущая дата</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:dateTime"/>
+  </xs:simpleType>
+  <xs:simpleType name="MessageGUID">
+    <xs:annotation>
+      <xs:documentation>Идентификатор сообщения</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="tns:GUIDType"/>
+  </xs:simpleType>
+  <xs:simpleType name="GUIDType">
+    <xs:annotation>
+      <xs:documentation>гуид</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="HeaderType">
+    <xs:annotation>
+      <xs:documentation>Заголовок</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Date" type="tns:Date">
+        <xs:annotation>
+          <xs:documentation>Текущая дата в формате ГГГГ-ММ-ДДTЧЧ:ММ:СС</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MessageGUID" type="tns:GUIDType">
+        <xs:annotation>
+          <xs:documentation>Идентификатор запроса</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HeaderRequest" type="tns:HeaderType">
+    <xs:annotation>
+      <xs:documentation>Заголовок запроса</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://schemas.xmlsoap.org/soap/encoding/</con:url><con:content><![CDATA[<!--Schema for the SOAP/1.1 encoding
+
+Portions © 2001 DevelopMentor. 
+© 2001 W3C (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University). All Rights Reserved.  
+ 
+This document is governed by the W3C Software License [1] as described in the FAQ [2].
+[1] http://www.w3.org/Consortium/Legal/copyright-software-19980720
+[2] http://www.w3.org/Consortium/Legal/IPR-FAQ-20000620.html#DTD 
+By obtaining, using and/or copying this work, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions:
+
+Permission to use, copy, modify, and distribute this software and its documentation, with or without modification,  for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the software and documentation or portions thereof, including modifications, that you make:
+
+1.  The full text of this NOTICE in a location viewable to users of the redistributed or derivative work. 
+
+2.  Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, a short notice of the following form (hypertext is preferred, text is permitted) should be used within the body of any redistributed or derivative code: "Copyright © 2001 World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University). All Rights Reserved. http://www.w3.org/Consortium/Legal/" 
+
+3.  Notice of any changes or modifications to the W3C files, including the date changes were made. (We recommend you provide URIs to the location from which the code is derived.)   
+
+Original W3C files; http://www.w3.org/2001/06/soap-encoding
+Changes made: 
+     - reverted namespace to http://schemas.xmlsoap.org/soap/encoding/
+     - reverted root to only allow 0 and 1 as lexical values
+	 - removed default value from root attribute declaration
+
+THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS," AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
+
+COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENTATION.
+
+The name and trademarks of copyright holders may NOT be used in advertising or publicity pertaining to the software without specific, written prior permission. Title to copyright in this software and any associated documentation will at all times remain with copyright holders.-->
+<xs:schema targetNamespace="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.xmlsoap.org/soap/encoding/">
+  <xs:attribute name="root">
+    <xs:annotation>
+      <xs:documentation>'root' can be used to distinguish serialization roots from other
+       elements that are present in a serialization but are not roots of
+       a serialized value graph</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:boolean">
+        <xs:pattern value="0|1"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attributeGroup name="commonAttributes">
+    <xs:annotation>
+      <xs:documentation>Attributes common to all elements that function as accessors or 
+        represent independent (multi-ref) values.  The href attribute is
+        intended to be used in a manner like CONREF.  That is, the element
+        content should be empty iff the href attribute appears</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="id" type="xs:ID"/>
+    <xs:attribute name="href" type="xs:anyURI"/>
+    <xs:anyAttribute namespace="##other" processContents="lax"/>
+  </xs:attributeGroup>
+  <!--Global Attributes.  The following attributes are intended to be usable via qualified attribute names on any complex type referencing them.-->
+  <!--Array attributes. Needed to give the type and dimensions of an array's contents, and the offset for partially-transmitted arrays.-->
+  <xs:simpleType name="arrayCoordinate">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:attribute name="arrayType" type="xs:string"/>
+  <xs:attribute name="offset" type="tns:arrayCoordinate"/>
+  <xs:attributeGroup name="arrayAttributes">
+    <xs:attribute ref="tns:arrayType"/>
+    <xs:attribute ref="tns:offset"/>
+  </xs:attributeGroup>
+  <xs:attribute name="position" type="tns:arrayCoordinate"/>
+  <xs:attributeGroup name="arrayMemberAttributes">
+    <xs:attribute ref="tns:position"/>
+  </xs:attributeGroup>
+  <xs:group name="Array">
+    <xs:sequence>
+      <xs:any namespace="##any" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="Array" type="tns:Array"/>
+  <xs:complexType name="Array">
+    <xs:annotation>
+      <xs:documentation>'Array' is a complex type for accessors identified by position</xs:documentation>
+    </xs:annotation>
+    <xs:group ref="tns:Array" minOccurs="0"/>
+    <xs:attributeGroup ref="tns:arrayAttributes"/>
+    <xs:attributeGroup ref="tns:commonAttributes"/>
+  </xs:complexType>
+  <!--'Struct' is a complex type for accessors identified by name. 
+       Constraint: No element may be have the same name as any other,
+       nor may any element have a maxOccurs > 1.-->
+  <xs:element name="Struct" type="tns:Struct"/>
+  <xs:group name="Struct">
+    <xs:sequence>
+      <xs:any namespace="##any" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:complexType name="Struct">
+    <xs:group ref="tns:Struct" minOccurs="0"/>
+    <xs:attributeGroup ref="tns:commonAttributes"/>
+  </xs:complexType>
+  <!--'Base64' can be used to serialize binary data using base64 encoding
+       as defined in RFC2045 but without the MIME line length limitation.-->
+  <xs:simpleType name="base64">
+    <xs:restriction base="xs:base64Binary"/>
+  </xs:simpleType>
+  <!--Element declarations corresponding to each of the simple types in the 
+      XML Schemas Specification.-->
+  <xs:element name="duration" type="tns:duration"/>
+  <xs:complexType name="duration">
+    <xs:simpleContent>
+      <xs:extension base="xs:duration">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="dateTime" type="tns:dateTime"/>
+  <xs:complexType name="dateTime">
+    <xs:simpleContent>
+      <xs:extension base="xs:dateTime">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="NOTATION" type="tns:NOTATION"/>
+  <xs:complexType name="NOTATION">
+    <xs:simpleContent>
+      <xs:extension base="xs:QName">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="time" type="tns:time"/>
+  <xs:complexType name="time">
+    <xs:simpleContent>
+      <xs:extension base="xs:time">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="date" type="tns:date"/>
+  <xs:complexType name="date">
+    <xs:simpleContent>
+      <xs:extension base="xs:date">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="gYearMonth" type="tns:gYearMonth"/>
+  <xs:complexType name="gYearMonth">
+    <xs:simpleContent>
+      <xs:extension base="xs:gYearMonth">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="gYear" type="tns:gYear"/>
+  <xs:complexType name="gYear">
+    <xs:simpleContent>
+      <xs:extension base="xs:gYear">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="gMonthDay" type="tns:gMonthDay"/>
+  <xs:complexType name="gMonthDay">
+    <xs:simpleContent>
+      <xs:extension base="xs:gMonthDay">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="gDay" type="tns:gDay"/>
+  <xs:complexType name="gDay">
+    <xs:simpleContent>
+      <xs:extension base="xs:gDay">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="gMonth" type="tns:gMonth"/>
+  <xs:complexType name="gMonth">
+    <xs:simpleContent>
+      <xs:extension base="xs:gMonth">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="boolean" type="tns:boolean"/>
+  <xs:complexType name="boolean">
+    <xs:simpleContent>
+      <xs:extension base="xs:boolean">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="base64Binary" type="tns:base64Binary"/>
+  <xs:complexType name="base64Binary">
+    <xs:simpleContent>
+      <xs:extension base="xs:base64Binary">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="hexBinary" type="tns:hexBinary"/>
+  <xs:complexType name="hexBinary">
+    <xs:simpleContent>
+      <xs:extension base="xs:hexBinary">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="float" type="tns:float"/>
+  <xs:complexType name="float">
+    <xs:simpleContent>
+      <xs:extension base="xs:float">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="double" type="tns:double"/>
+  <xs:complexType name="double">
+    <xs:simpleContent>
+      <xs:extension base="xs:double">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="anyURI" type="tns:anyURI"/>
+  <xs:complexType name="anyURI">
+    <xs:simpleContent>
+      <xs:extension base="xs:anyURI">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="QName" type="tns:QName"/>
+  <xs:complexType name="QName">
+    <xs:simpleContent>
+      <xs:extension base="xs:QName">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="string" type="tns:string"/>
+  <xs:complexType name="string">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="normalizedString" type="tns:normalizedString"/>
+  <xs:complexType name="normalizedString">
+    <xs:simpleContent>
+      <xs:extension base="xs:normalizedString">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="token" type="tns:token"/>
+  <xs:complexType name="token">
+    <xs:simpleContent>
+      <xs:extension base="xs:token">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="language" type="tns:language"/>
+  <xs:complexType name="language">
+    <xs:simpleContent>
+      <xs:extension base="xs:language">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="Name" type="tns:Name"/>
+  <xs:complexType name="Name">
+    <xs:simpleContent>
+      <xs:extension base="xs:Name">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="NMTOKEN" type="tns:NMTOKEN"/>
+  <xs:complexType name="NMTOKEN">
+    <xs:simpleContent>
+      <xs:extension base="xs:NMTOKEN">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="NCName" type="tns:NCName"/>
+  <xs:complexType name="NCName">
+    <xs:simpleContent>
+      <xs:extension base="xs:NCName">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="NMTOKENS" type="tns:NMTOKENS"/>
+  <xs:complexType name="NMTOKENS">
+    <xs:simpleContent>
+      <xs:extension base="xs:NMTOKENS">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="ID" type="tns:ID"/>
+  <xs:complexType name="ID">
+    <xs:simpleContent>
+      <xs:extension base="xs:ID">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="IDREF" type="tns:IDREF"/>
+  <xs:complexType name="IDREF">
+    <xs:simpleContent>
+      <xs:extension base="xs:IDREF">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="ENTITY" type="tns:ENTITY"/>
+  <xs:complexType name="ENTITY">
+    <xs:simpleContent>
+      <xs:extension base="xs:ENTITY">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="IDREFS" type="tns:IDREFS"/>
+  <xs:complexType name="IDREFS">
+    <xs:simpleContent>
+      <xs:extension base="xs:IDREFS">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="ENTITIES" type="tns:ENTITIES"/>
+  <xs:complexType name="ENTITIES">
+    <xs:simpleContent>
+      <xs:extension base="xs:ENTITIES">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="decimal" type="tns:decimal"/>
+  <xs:complexType name="decimal">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="integer" type="tns:integer"/>
+  <xs:complexType name="integer">
+    <xs:simpleContent>
+      <xs:extension base="xs:integer">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="nonPositiveInteger" type="tns:nonPositiveInteger"/>
+  <xs:complexType name="nonPositiveInteger">
+    <xs:simpleContent>
+      <xs:extension base="xs:nonPositiveInteger">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="negativeInteger" type="tns:negativeInteger"/>
+  <xs:complexType name="negativeInteger">
+    <xs:simpleContent>
+      <xs:extension base="xs:negativeInteger">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="long" type="tns:long"/>
+  <xs:complexType name="long">
+    <xs:simpleContent>
+      <xs:extension base="xs:long">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="int" type="tns:int"/>
+  <xs:complexType name="int">
+    <xs:simpleContent>
+      <xs:extension base="xs:int">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="short" type="tns:short"/>
+  <xs:complexType name="short">
+    <xs:simpleContent>
+      <xs:extension base="xs:short">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="byte" type="tns:byte"/>
+  <xs:complexType name="byte">
+    <xs:simpleContent>
+      <xs:extension base="xs:byte">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="nonNegativeInteger" type="tns:nonNegativeInteger"/>
+  <xs:complexType name="nonNegativeInteger">
+    <xs:simpleContent>
+      <xs:extension base="xs:nonNegativeInteger">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="unsignedLong" type="tns:unsignedLong"/>
+  <xs:complexType name="unsignedLong">
+    <xs:simpleContent>
+      <xs:extension base="xs:unsignedLong">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="unsignedInt" type="tns:unsignedInt"/>
+  <xs:complexType name="unsignedInt">
+    <xs:simpleContent>
+      <xs:extension base="xs:unsignedInt">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="unsignedShort" type="tns:unsignedShort"/>
+  <xs:complexType name="unsignedShort">
+    <xs:simpleContent>
+      <xs:extension base="xs:unsignedShort">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="unsignedByte" type="tns:unsignedByte"/>
+  <xs:complexType name="unsignedByte">
+    <xs:simpleContent>
+      <xs:extension base="xs:unsignedByte">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="positiveInteger" type="tns:positiveInteger"/>
+  <xs:complexType name="positiveInteger">
+    <xs:simpleContent>
+      <xs:extension base="xs:positiveInteger">
+        <xs:attributeGroup ref="tns:commonAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="anyType"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint></con:endpoints><con:operation id="01461ab8-1c0d-42b0-8b37-d1e6bcca0ffa" isOneWay="false" action="urn:CreditCalculation" name="CreditCalculation" bindingOperationName="CreditCalculation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/></con:operation></con:interface><con:testSuite id="19b5b85f-8183-4b6f-8cc3-29c98de47fc8" name="TestSuite - SOUP"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3c5bd38f-9eb3-4b9a-9a61-6e5f88f3a5ca" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Позитивные запросы" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="request" id="c7465e0c-7d8b-4b54-be57-978e4753e28b" name="15.44%"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="15.44%" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="7501c7f1-28d3-4860-84ac-1f360e9b9a18"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="1" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>250000</imp:Amount>\r
+            <imp:Fee>62500</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="45ea7850-07d4-4030-866b-73b1fbb86c87" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="f6abde40-661b-4065-8bc6-a8b61dfff66f" name="16.25 %"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="16.25 %" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="c0f3d5c2-36f2-4289-95d2-491a9214ffdb"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="1" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>250000</imp:Amount>\r
+            <imp:Fee>62000</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="0b9c5249-50eb-4b59-8f82-643bc1319d39" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="1dfa3a68-f329-47c3-bbc0-5a2bc8512e0b" name="17.06 %"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="17.06 %" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="8ef0a914-8ce3-4ac2-8db9-7d857a67c9d4"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="1" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>250000</imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="6ddf2e90-b780-4dca-8db0-a64d2c396bba" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="bca6e7f3-838e-416a-8221-33eb8cecb920" name="30.83%"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="30.83%" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="137e9d35-89fe-4af1-8f3c-478010a74cb7"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>250000</imp:Amount>\r
+            <imp:Fee>62500</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b284cd93-8e05-4311-bea9-ec891b20aafe" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="13ebce91-fca0-4cc3-9c18-c04ec600d9ef" name="32.45 %"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="32.45 %" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="5902560a-c2d1-4aeb-83f3-d316199678ee"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>250000</imp:Amount>\r
+            <imp:Fee>62000</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="dabae39b-05e1-4db4-9560-06df3f523398" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="d42f3c42-a829-4f46-ba13-71e9676d59c1" name="34.07%"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="34.07%" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4c244155-3c27-426b-88a1-69082f9d10e7"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>250000</imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5fb338f9-67fa-4fc9-b81b-857c1d56ae8f" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="a77f0572-e9cc-4421-83d3-9af0445e0eda" name="Есть судимость"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="Есть судимость" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="c779fb45-2842-4948-8660-26a5455b125f"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="1">\r
+         <imp:Credit>\r
+            <imp:Amount>100000</imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="50b0d932-d6a1-4097-8eca-119481db3bd5" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="4ba2c876-f01d-47be-ae06-33ba01ed41ef" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Негативные запросы" searchProperties="true"><con:settings/><con:testStep type="request" id="944e97ef-975e-478e-8cc9-c7b4d22ee283" name="ЖС=0"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="ЖС=0" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="0695f47b-2ee0-4422-a6c4-9f1a0447654c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>0</imp:Amount>\r
+            <imp:Fee>499999</imp:Fee>\r
+            <imp:Term>60</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5e3812b4-954c-4199-bd64-9779216a210a" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="b362a016-e85f-4fef-9d7f-550eecd275d9" name="Не заполнен Amount"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="Не заполнен Amount" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="d9e97c15-d633-48a3-94fe-cb88e21b38e5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount></imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="51058221-374d-4463-8aec-e8107c3d9b0a" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="1cda08fc-1566-406d-9d60-2588fec9c6ab" name="Не заполнен Fee"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="Не заполнен Fee" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="7501c7f1-28d3-4860-84ac-1f360e9b9a18"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="1" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>250000</imp:Amount>\r
+            <imp:Fee></imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="45ea7850-07d4-4030-866b-73b1fbb86c87" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="314f0151-fa21-47cf-a49a-1234919de1d3" name="Не заполнен Term"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="Не заполнен Term" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4c244155-3c27-426b-88a1-69082f9d10e7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>250000</imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term></imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5fb338f9-67fa-4fc9-b81b-857c1d56ae8f" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="cc3db6ab-b234-46fb-943a-25a3b857f8ee" name="Отсутствует Amount (обязат.)"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="Отсутствует Amount (обязат.)" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4c244155-3c27-426b-88a1-69082f9d10e7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+           
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5fb338f9-67fa-4fc9-b81b-857c1d56ae8f" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="023b2be8-d4a9-4255-82fd-ba5176ecda77" name="Отсутствует Fee (обязат.)"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="Отсутствует Fee (обязат.)" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="18d5843a-5f0f-4b32-b986-8e7845c17316"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount></imp:Amount>\r
+         
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="bbd07985-ff96-4714-87af-bc79fc8a0650" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="7fba10d7-31a3-4381-85d6-6f0c3738c923" name="Отсутствует Term (обязат.)"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="Отсутствует Term (обязат.)" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4c244155-3c27-426b-88a1-69082f9d10e7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>250000</imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5fb338f9-67fa-4fc9-b81b-857c1d56ae8f" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="eea233ce-a34c-4c4e-85a9-ed1b1784b7ab" name="Срок кредита &lt; нижней границы"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="Срок кредита &lt; нижней границы" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="c1553818-4007-4709-8620-75846f34e945"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>100000</imp:Amount>\r
+            <imp:Fee>50000</imp:Fee>\r
+            <imp:Term>10</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="71e61f12-6dc9-478a-9ad7-870af463d5ee" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="61271954-205e-48a1-ac1a-0facf4725b84" name="Срок кредита > верхней границы"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="Срок кредита > верхней границы" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="378cca37-34e3-4dfa-8fb2-96e20b747ce1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>99999</imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term>120</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="de6fcb07-7db6-4a19-9304-25c80ce886ae" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="7c9c1e52-af22-4b80-9456-1c18205034e2" name="Сумма кредита &lt; нижней границы"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="Сумма кредита &lt; нижней границы" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="193a65b3-c475-4a4a-b764-19375e4d10ad"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>99999</imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="85e0a462-b8d0-4aca-bd5d-8282b3382ea2" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="0fbbc4a5-6d8d-4ff8-9e43-1c63db62570d" name="Сумма кредита > верхней границы"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="Сумма кредита > верхней границы" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="635a2116-383f-4d72-8e79-4b17f265ff31"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>999000</imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5a947895-bfb5-4c12-b8f7-2871b5e04f31" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="dba8bb3d-9cba-4db1-a475-2b48ce71af4d" name="ПВ указан как %"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="ПВ указан как %" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4c244155-3c27-426b-88a1-69082f9d10e7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>100000</imp:Amount>\r
+            <imp:Fee>25%</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5fb338f9-67fa-4fc9-b81b-857c1d56ae8f" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="09311955-71b4-4395-b9a2-5becb72456d7" name="ПВ > ЖС"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="ПВ > ЖС" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4c244155-3c27-426b-88a1-69082f9d10e7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>100000</imp:Amount>\r
+            <imp:Fee>500000</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5fb338f9-67fa-4fc9-b81b-857c1d56ae8f" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="9bc4c3b6-cd5c-4f26-8a22-37992904f1d3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Баги веб-сервиса" searchProperties="true"><con:settings/><con:testStep type="request" id="c4b15df1-9045-42ec-ad20-16e7949b4b8f" name="проверка идет не сверху вниз, перескакивает через первую ошибку"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="проверка идет не сверху вниз, перескакивает через первую ошибку" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="21bc551c-d256-4715-bd97-ce13e563fd65"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>99999</imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term>120</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7e029d02-3a51-4e92-9fbd-d885f83b9ba2" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="0f17874c-74aa-48fd-a04d-96b1eb9e398e" name="+Division by zero ПВ = 50% - 100% валидной Желаемой суммы"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="+Division by zero ПВ = 50% - 100% валидной Желаемой суммы" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="94ce833c-5f87-4a58-8c1d-b6b92f128e3a"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>500000</imp:Amount>\r
+            <imp:Fee>250000</imp:Fee>\r
+            <imp:Term>60</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="92662598-2875-490c-9867-58e240180d31" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="097c224c-b065-4f7a-81f0-58abf1c4f4ac" name="CriticalError другой тип данных (char) в поле Amount, где д.б. тип int"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="CriticalError другой тип данных (char) в поле Amount, где д.б. тип int" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="6e0cfc18-217b-4c8a-abb9-2b05aa86abdf"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>abcd</imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="8bb6381a-acff-4a0f-bc3d-3aba049ae900" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="33dc61a9-aa05-4583-876f-afb4beb4a471" name="CriticalError: MessageGUID указан как &quot;0&quot;. Система не пишет, что данное поле должно быть типом GUID"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="CriticalError: MessageGUID указан как &quot;0&quot;. Система не пишет, что данное поле должно быть типом GUID" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="5068abb9-4f6d-4d3d-b2ed-fccdafd53aff"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>500000</imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term>60</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2679a372-afdc-4b18-be91-de6cc696f5f1" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="3cdea8c8-ce0c-4a93-8b6e-1bdd3cd25675" name="+CriticalError - поля ПВ и срок принимают значение 0 при любом валидном значении ЖС"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="+CriticalError - поля ПВ и срок принимают значение 0 при любом валидном значении ЖС" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4c244155-3c27-426b-88a1-69082f9d10e7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>600000</imp:Amount>\r
+            <imp:Fee>0</imp:Fee>\r
+            <imp:Term>0</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5fb338f9-67fa-4fc9-b81b-857c1d56ae8f" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="9176b43c-7301-4f6b-8656-609fa2a47481" name="CriticalError - срок кредита принимает значение 0"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="CriticalError - срок кредита принимает значение 0" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4c244155-3c27-426b-88a1-69082f9d10e7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>250000</imp:Amount>\r
+            <imp:Fee>10000</imp:Fee>\r
+            <imp:Term>0</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5fb338f9-67fa-4fc9-b81b-857c1d56ae8f" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="784fea16-2ac8-412e-b51d-f59e7172cd25" name="!+Рассчитал при значении поля ЖС = 0 и любого значения ПВ >0"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="!+Рассчитал при значении поля ЖС = 0 и любого значения ПВ >0" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="5068abb9-4f6d-4d3d-b2ed-fccdafd53aff"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>${=new Date().format("yyyy-MM-dd'T'HH:mm:ss")}</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="0" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>0</imp:Amount>\r
+            <imp:Fee>-1</imp:Fee>\r
+            <imp:Term>60</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2679a372-afdc-4b18-be91-de6cc696f5f1" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="293840de-bacc-4c51-8bc0-32c4afc207a3" name="!+CriticalError - значение поля Date в ответе не совпадает со значением в запросе при вводе вручную по формату yyyy-MM-dd'T'HH:mm:ss"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CreditBinding</con:interface><con:operation>CreditCalculation</con:operation><con:request name="!+CriticalError - значение поля Date в ответе не совпадает со значением в запросе при вводе вручную по формату yyyy-MM-dd'T'HH:mm:ss" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="7501c7f1-28d3-4860-84ac-1f360e9b9a18"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://creditcalculator.pointschool.ru/calculator/importCreditParams?ws=1">\r
+   <soapenv:Header>\r
+      <imp:HeaderRequest>\r
+         <imp:Date>0000-13-39T00:00:00</imp:Date>\r
+         <imp:MessageGUID>${=java.util.UUID.randomUUID()}</imp:MessageGUID>\r
+      </imp:HeaderRequest>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <imp:importCreditParams imp:client="1" imp:PreviousConviction="0">\r
+         <imp:Credit>\r
+            <imp:Amount>250000</imp:Amount>\r
+            <imp:Fee>62500</imp:Fee>\r
+            <imp:Term>12</imp:Term>\r
+         </imp:Credit>\r
+      </imp:importCreditParams>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="45ea7850-07d4-4030-866b-73b1fbb86c87" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CreditCalculation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
