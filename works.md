@@ -37,7 +37,7 @@
     - [Проверка орфографии](https://docs.google.com/spreadsheets/d/1qtC8pqL5LOC9e7Xp0zdGfpTWj1WbXDL2Ts4ma3VHHgg/edit?usp=sharing)
     - [Баг-репорты](https://docs.google.com/spreadsheets/d/11dVUYGViM14MFz-uNA1cDm8wyoLpZJTl7tFeGEznwKM/edit?usp=sharing)
 - Интеграционное тестирование в SOUP UI
-    - Запросы под Soup API
+    - Запросы под Soap API
     - Запросы под REST API
 
 ### Socials:
