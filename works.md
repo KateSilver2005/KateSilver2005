@@ -40,7 +40,9 @@
     - [Данные по сервисам]([http://creditcalculator.pointschool.ru/users/api/bank](https://docs.google.com/document/d/1BqB_c5UP3USjUDFDlsVSN325Uebgd2NOR4mb0LKIIa0/edit#))
     - [Запросы под Soap API в XML](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/SOAP-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B0_new.xml)
     - [Запросы под REST API в XML](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/REST-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B0_new.xml)
+## Тестирование мобильных приложений
 
+## Автоматизация тестирования
 ### Socials:
 [![Telegram](https://img.shields.io/badge/-Telegram-090909?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/kate_silver2005)
 [![Vkontakte](https://img.shields.io/badge/-Vkontakte-090909?style=for-the-badge&logo=Vk&logoColor=4F7DB3)](https://vk.com/katesilver)
