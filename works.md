@@ -37,10 +37,13 @@
     - [Проверка орфографии](https://docs.google.com/spreadsheets/d/1qtC8pqL5LOC9e7Xp0zdGfpTWj1WbXDL2Ts4ma3VHHgg/edit?usp=sharing)
     - [Баг-репорты](https://docs.google.com/spreadsheets/d/11dVUYGViM14MFz-uNA1cDm8wyoLpZJTl7tFeGEznwKM/edit?usp=sharing)
 - Интеграционное тестирование в SOUP UI
-    - [Данные по сервисам]([http://creditcalculator.pointschool.ru/users/api/bank](https://docs.google.com/document/d/1BqB_c5UP3USjUDFDlsVSN325Uebgd2NOR4mb0LKIIa0/edit#))
+    - [Данные по сервисам](https://docs.google.com/document/d/1BqB_c5UP3USjUDFDlsVSN325Uebgd2NOR4mb0LKIIa0/edit#heading=h.5eb463wjf2eq)
     - [Запросы под Soap API в XML](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/SOAP-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B0_new.xml)
     - [Запросы под REST API в XML](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/REST-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B0_new.xml)
+- [Тестирование юзабилити](https://docs.google.com/document/d/1LZNJJCSO7gZlrH-XxAawIpyE_XxKLEE3RXf7IMlH00s/edit#heading=h.yxrpvhm63ncr)
 ## Тестирование мобильных приложений
+- [Аналитика нативного приложения ВК +чек-лист](https://docs.google.com/spreadsheets/d/1o6BxwiLI__dHibk1SEULIp1Sp4pSlHDYf71RgxebU3o/edit?usp=sharing)
+- [Устройства для тестирования приложения](https://docs.google.com/spreadsheets/d/11nQjTB8tMGQBgl79g4d-ZCc68uaZS6BaDPNK-yGU4Tw/edit?usp=sharing)
 
 ## Автоматизация тестирования
 ### Socials:
