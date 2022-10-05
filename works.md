@@ -46,6 +46,11 @@
 - [Устройства для тестирования приложения](https://docs.google.com/spreadsheets/d/11nQjTB8tMGQBgl79g4d-ZCc68uaZS6BaDPNK-yGU4Tw/edit?usp=sharing)
 
 ## Автоматизация тестирования
+- Анализ логов с помощью WebLog Expert
+- Подготовка тестовых данных с помощью generatedata.com
+- Автотест для web-сервиса «Кредитный калькулятор» (Katalon Recorder)
+    - [Тест-кейс](https://docs.google.com/document/d/1XWCMJQ1-gtMpNzM_luvBGo3mK9DgeEK6/edit?usp=sharing&ouid=103665283150445584431&rtpof=true&sd=true)
+    - [Автотест]()
 ### Socials:
 [![Telegram](https://img.shields.io/badge/-Telegram-090909?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/kate_silver2005)
 [![Vkontakte](https://img.shields.io/badge/-Vkontakte-090909?style=for-the-badge&logo=Vk&logoColor=4F7DB3)](https://vk.com/katesilver)
