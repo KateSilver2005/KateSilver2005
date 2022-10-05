@@ -41,6 +41,10 @@
     - [Запросы под Soap API в XML](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/SOAP-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B0_new.xml)
     - [Запросы под REST API в XML](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/REST-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B0_new.xml)
 - [Тестирование юзабилити](https://docs.google.com/document/d/1LZNJJCSO7gZlrH-XxAawIpyE_XxKLEE3RXf7IMlH00s/edit#heading=h.yxrpvhm63ncr)
+
+## Тестирование формы авторизации
+- [Тестовый контур](https://qatest.606ep.ru/)
+- [Дизайн в Figma](https://www.figma.com/file/ZaXwWZzjBjysg78zLoO5r7/Test-for-QA?node-id=0%3A1)
 ## Тестирование мобильных приложений
 - [Аналитика нативного приложения ВК +чек-лист](https://docs.google.com/spreadsheets/d/1o6BxwiLI__dHibk1SEULIp1Sp4pSlHDYf71RgxebU3o/edit?usp=sharing)
 - [Устройства для тестирования приложения](https://docs.google.com/spreadsheets/d/11nQjTB8tMGQBgl79g4d-ZCc68uaZS6BaDPNK-yGU4Tw/edit?usp=sharing)
