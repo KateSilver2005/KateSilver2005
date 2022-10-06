@@ -47,6 +47,8 @@
 - [Дизайн в Figma](https://www.figma.com/file/ZaXwWZzjBjysg78zLoO5r7/Test-for-QA?node-id=0%3A1)
 - [Баги](https://docs.google.com/spreadsheets/d/1n23SzoUA0Wrg1faKmWTBDgIxcZKutXxOISRMfnRBKB4/edit#gid=1598315195)
 - [Тест-кейсы](https://docs.google.com/spreadsheets/d/1MzZCwPYObGKkboMbmOojcDv_CP0gQWa8MRN9Qs145VQ/edit#gid=760123050)
+- [Чек-лист функциональности]
+- [Вопросы к аналитику]
 ## Тестирование мобильных приложений
 - [Аналитика нативного приложения ВК +чек-лист](https://docs.google.com/spreadsheets/d/1o6BxwiLI__dHibk1SEULIp1Sp4pSlHDYf71RgxebU3o/edit?usp=sharing)
 - [Устройства для тестирования приложения](https://docs.google.com/spreadsheets/d/11nQjTB8tMGQBgl79g4d-ZCc68uaZS6BaDPNK-yGU4Tw/edit?usp=sharing)
@@ -55,8 +57,6 @@
 - Анализ логов с помощью WebLog Expert
     - [Лог-файл](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/access.log)
     - [Аналитика в - WebLog Expert](https://docs.google.com/spreadsheets/d/1_q1PqMzXT27rRD-XHA9o4GUYcNL89X5RYGV4pxBjg3E/edit?usp=sharing)
-    - [Чек-лист функциональности]
-    - [Вопросы к аналитику]
 - [Подготовка тестовых данных с помощью generatedata.com](https://docs.google.com/spreadsheets/d/1PRIS33h-OT1XdVq4HiJ_1IbZpJAQawtqjpffwXysO7w/edit?usp=sharing)
 - Автотест для web-сервиса «Кредитный калькулятор» (Katalon Recorder)
     - [Тест-кейс](https://docs.google.com/document/d/1XWCMJQ1-gtMpNzM_luvBGo3mK9DgeEK6/edit?usp=sharing&ouid=103665283150445584431&rtpof=true&sd=true)
