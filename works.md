@@ -47,8 +47,8 @@
 - [Дизайн в Figma](https://www.figma.com/file/ZaXwWZzjBjysg78zLoO5r7/Test-for-QA?node-id=0%3A1)
 - [Баги](https://docs.google.com/spreadsheets/d/1n23SzoUA0Wrg1faKmWTBDgIxcZKutXxOISRMfnRBKB4/edit#gid=1598315195)
 - [Тест-кейсы](https://docs.google.com/spreadsheets/d/1MzZCwPYObGKkboMbmOojcDv_CP0gQWa8MRN9Qs145VQ/edit#gid=760123050)
-- [Чек-лист функциональности]
-- [Вопросы к аналитику]
+- [Чек-лист функциональности](https://docs.google.com/spreadsheets/d/1QvMQUYT5FylzOncoDuuz2R4DRqhrJ659I2KkYG6qBf4/edit?usp=sharing)
+- [Вопросы к аналитику](https://docs.google.com/spreadsheets/d/1pAZiozMBIkbH-HGm7unLuUIbIFM943R4YQUqWyThCpw/edit?usp=sharing)
 ## Тестирование мобильных приложений
 - [Аналитика нативного приложения ВК +чек-лист](https://docs.google.com/spreadsheets/d/1o6BxwiLI__dHibk1SEULIp1Sp4pSlHDYf71RgxebU3o/edit?usp=sharing)
 - [Устройства для тестирования приложения](https://docs.google.com/spreadsheets/d/11nQjTB8tMGQBgl79g4d-ZCc68uaZS6BaDPNK-yGU4Tw/edit?usp=sharing)
