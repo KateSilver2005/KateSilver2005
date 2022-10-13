@@ -1,6 +1,21 @@
 [![Header](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/Skills-and-abilities-Map-short.png)](https://disk.yandex.ru/i/CNiqy5byUMSG2w)
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&pause=1000&color=FFFFFF&width=435&lines=I+am+a+beginner+testing+engineer)](https://git.io/typing-svg)
 *** 
+## Tools
+![JIRA](https://img.shields.io/badge/-JIRA-090909?style=for-the-badge&logo=Jira&logoColor=0052CC)
+[![Trello]
+[![TestRail]
+[![DevTools]
+[![SoapUI]
+[![Xmind]
+[![Sitechco]
+[![WebLog Expert]
+[![Generatedata]
+[![Katalon Recorder]
+[![Web Developer]
+[![BrowserStack]
+[![Android Studio]
+[![Android Studio]
 ## Кредитный конвейер
 - [Тестируемый продукт](http://creditcalculator.pointschool.ru/credit/)
 - [Требования к продукту](https://docs.google.com/document/d/1JWYExMTe26v58JiZTLQqAhCzkJYJJsJ96YCI2A9lDpM/edit)
