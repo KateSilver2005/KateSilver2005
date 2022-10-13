@@ -1,5 +1,4 @@
 [![Header](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/Skills-and-abilities-Map-short.png)](https://disk.yandex.ru/i/CNiqy5byUMSG2w)
-
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&pause=1000&color=FFFFFF&width=435&lines=I+am+a+beginner+testing+engineer)](https://git.io/typing-svg)
 *** 
 ## Кредитный конвейер
@@ -41,7 +40,6 @@
     - [Запросы под Soap API в XML](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/SOAP-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B0_new.xml)
     - [Запросы под REST API в XML](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/REST-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B0_new.xml)
 - [Тестирование юзабилити](https://docs.google.com/document/d/1LZNJJCSO7gZlrH-XxAawIpyE_XxKLEE3RXf7IMlH00s/edit#heading=h.yxrpvhm63ncr)
-
 ## Тестирование формы авторизации
 - [Тестовый контур](https://qatest.606ep.ru/)
 - [Дизайн в Figma](https://www.figma.com/file/ZaXwWZzjBjysg78zLoO5r7/Test-for-QA?node-id=0%3A1)
@@ -52,7 +50,6 @@
 ## Тестирование мобильных приложений
 - [Аналитика нативного приложения ВК +чек-лист](https://docs.google.com/spreadsheets/d/1o6BxwiLI__dHibk1SEULIp1Sp4pSlHDYf71RgxebU3o/edit?usp=sharing)
 - [Устройства для тестирования приложения](https://docs.google.com/spreadsheets/d/11nQjTB8tMGQBgl79g4d-ZCc68uaZS6BaDPNK-yGU4Tw/edit?usp=sharing)
-
 ## Автоматизация тестирования
 - Анализ логов с помощью WebLog Expert
     - [Лог-файл](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/access.log)
@@ -61,9 +58,8 @@
 - Автотест для web-сервиса «Кредитный калькулятор» (Katalon Recorder)
     - [Тест-кейс](https://docs.google.com/document/d/1XWCMJQ1-gtMpNzM_luvBGo3mK9DgeEK6/edit?usp=sharing&ouid=103665283150445584431&rtpof=true&sd=true)
     - [Автотест](https://github.com/KateSilver2005/KateSilver2005/blob/main/assets/AT.html)
-### Socials:
+### Contacts:
 [![Telegram](https://img.shields.io/badge/-Telegram-090909?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/kate_silver2005)
-[![Vkontakte](https://img.shields.io/badge/-Vkontakte-090909?style=for-the-badge&logo=Vk&logoColor=4F7DB3)](https://vk.com/katesilver)
+[![WhatsApp](https://img.shields.io/badge/-WhatsApp-090909?style=for-the-badge&logo=WhatsApp&logoColor=25D366)](https://wa.me/+79092178092)
 [![Mail.ru](https://img.shields.io/badge/-Mail.ru-090909?style=for-the-badge&logo=Mail.Ru&logoColor=ff9e05&logoText=125ecb)](https://e.mail.ru/compose/?to=sade_2005@list.ru)
-
-
+[![Vkontakte](https://img.shields.io/badge/-Vkontakte-090909?style=for-the-badge&logo=Vk&logoColor=4F7DB3)](https://vk.com/katesilver)
