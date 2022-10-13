@@ -64,7 +64,6 @@
 ### Socials:
 [![Telegram](https://img.shields.io/badge/-Telegram-090909?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/kate_silver2005)
 [![Vkontakte](https://img.shields.io/badge/-Vkontakte-090909?style=for-the-badge&logo=Vk&logoColor=4F7DB3)](https://vk.com/katesilver)
-[![Mail.ru](https://img.shields.io/badge/-Mail.ru-090909?style=for-the-badge&logo=Mail.Ru&logoColor=ff9e05&logoText=125ecb)](https://e.mail.ru/compose/)
-<a href="mailto:sade_2005@email")
+[![Mail.ru](https://img.shields.io/badge/-Mail.ru-090909?style=for-the-badge&logo=Mail.Ru&logoColor=ff9e05&logoText=125ecb)](https://e.mail.ru/compose/?to=sade_2005@list.ru)
 
 
