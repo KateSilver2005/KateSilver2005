@@ -3,19 +3,19 @@
 *** 
 ## Tools
 ![JIRA](https://img.shields.io/badge/-JIRA-090909?style=for-the-badge&logo=Jira&logoColor=0052CC)
-[![Trello]
-[![TestRail]
-[![DevTools]
-[![SoapUI]
-[![Xmind]
-[![Sitechco]
-[![WebLog Expert]
-[![Generatedata]
-[![Katalon Recorder]
-[![Web Developer]
-[![BrowserStack]
-[![Android Studio]
-[![Android Studio]
+![Trello](https://img.shields.io/badge/-Trello-090909?style=for-the-badge&logo=Trello&logoColor=0052CC)
+![Android-Studio](https://img.shields.io/badge/-AndroidStudio-090909?style=for-the-badge&logo=AndroidStudio&logoColor=3DDC84)
+![TestRail](https://img.shields.io/badge/-TestRail-090909?style=for-the-badge&logo=Coderwall&logoColor=73bf54)
+![DevTools](https://img.shields.io/badge/-DevTools-090909?style=for-the-badge&logo=GoogleChrome&logoColor=4285F4)
+![SoapUI](https://img.shields.io/badge/-SoapUI-090909?style=for-the-badge&logo=Similarweb&logoColor=68b845)
+![Xmind](https://img.shields.io/badge/-X_mind-090909?style=for-the-badge&logo=Nutanix&logoColor=eb2001)
+![Sitechco](https://img.shields.io/badge/-Sitechco-090909?style=for-the-badge&logo=Svelte&logoColor=16b8cf)
+![WebLog Expert](https://img.shields.io/badge/-WebLog_Expert-090909?style=for-the-badge&logo=PowerAutomate&logoColor=c63100)
+![Generatedata](https://img.shields.io/badge/-Generatedata-090909?style=for-the-badge&logo=Gitpod&logoColor=f2ecbf)
+![Katalon Recorder](https://img.shields.io/badge/-Katalon_Recorder-090909?style=for-the-badge&logo=Kaufland&logoColor=9aca3a)
+![Web Developer](https://img.shields.io/badge/-Web_Developer-090909?style=for-the-badge&logo=Quasar&logoColor=8f919d)
+![BrowserStack](https://img.shields.io/badge/-BrowserStack-090909?style=for-the-badge&logo=Crunchyroll&logoColor=e6613a)
+
 ## Кредитный конвейер
 - [Тестируемый продукт](http://creditcalculator.pointschool.ru/credit/)
 - [Требования к продукту](https://docs.google.com/document/d/1JWYExMTe26v58JiZTLQqAhCzkJYJJsJ96YCI2A9lDpM/edit)
